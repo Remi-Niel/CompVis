@@ -103,5 +103,11 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Generated videos
+# Data set / Generated videos
 *.avi
+*.mp4
+*.png
+*.jpg
+*.jpeg
+
+
