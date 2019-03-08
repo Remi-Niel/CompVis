@@ -65,7 +65,7 @@ max_radius = int(max_radius)+50;
 
 
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-video = cv2.VideoWriter('eclipse.avi',fourcc,1,(2 * max_radius, 2 * max_radius))
+video = cv2.VideoWriter('eclipse.avi',fourcc,2,(2 * max_radius, 2 * max_radius))
 
 with progressbar.ProgressBar(max_value=len(imgs)) as bar:
 	for i, file in enumerate(imgs):
