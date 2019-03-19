@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "qimage": "cpp",
+        "qpixmap": "cpp",
+        "qapplication": "cpp"
+    }
+}
