@@ -1,4 +1,5 @@
 import cv2
+import progressbar
 
 def correlation(image1, image2):
     res = cv2.matchTemplate(image1, image2, cv2.TM_CCORR_NORMED)
@@ -6,11 +7,10 @@ def correlation(image1, image2):
 
 
 def angle_offset(image1, image2):
-
 	maxCor = -1
 	bestRot = 0
 
-	for angle in range(360):
+	for angle in progressbar.progressbar(range(-10,11)):
 		(h, w) = image1.shape[:2];
 		M = cv2.getRotationMatrix2D((w / 2, h / 2), angle, 1.0) 
 		rotated = cv2.warpAffine(image1, M, (h, w)) 
@@ -24,8 +24,7 @@ def angle_offset(image1, image2):
 	return bestRot;
 
 if __name__ == "__main__":
-	raw_img = cv2.imread("moon.jpg",cv2.IMREAD_COLOR)
-	cimg = cv2.cvtColor(raw_img,cv2.COLOR_BGR2GRAY)
+	cimg = cv2.imread("output_translation_aligned/frame_0.png",0)
 
 	(h, w) = cimg.shape[:2];
 
