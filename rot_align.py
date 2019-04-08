@@ -30,7 +30,6 @@ def angle_offset(image1, image2):
 if __name__ == "__main__":
 	aligned_imgs = glob.glob('output_translation_aligned/' +'*.png',recursive=True)
 	aligned_imgs.sort()
-	aligned_imgs = aligned_imgs[:10]
 
 	try:  
 	    os.mkdir("output_rotation_aligned")
