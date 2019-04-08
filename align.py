@@ -90,21 +90,3 @@ with progressbar.ProgressBar(max_value=len(imgs)) as bar:
 		cv2.imwrite("output_translation_aligned/frame_" + str(i) +".png",adjusted_img)
 
 
-aligned_imgs = glob.glob('output_translation_aligned/' +'*.png',recursive=True)
-aligned_imgs.sort()
-
-previous = cv2.imread(aligned_imgs[0], 0);
-previous_angle = 0;
-angles = []
-for idx in range(1, len(aligned_imgs)):
-	print("Aligning image " + str(idx))
-	current = cv2.imread(aligned_imgs[idx], 0);
-	angle = angle_offset(previous, current)
-	angles.append(previous_angle + angle);
-	previous = current
-	previous_angle = angle
-
-print (angles)
-
-
-cv2.destroyAllWindows()
