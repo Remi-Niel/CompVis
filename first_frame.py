@@ -12,7 +12,7 @@ def first_frame(data):
 	threshold = 40;
 	min_rad = upper_lim - 5;
 	max_rad = upper_lim;
-	edge_thresh = 40;
+	edge_thresh = 70;
 
 	hist, thresh = cv2.threshold(img,30,255,cv2.THRESH_BINARY)
 
