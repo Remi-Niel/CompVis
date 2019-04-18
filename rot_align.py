@@ -6,8 +6,8 @@ import progressbar
 from multiprocessing import Pool
 
 def correlation(image1, image2):
-	hist, img1 = cv2.threshold(image1,50,255,cv2.THRESH_TOZERO)
-	hist, img2 = cv2.threshold(image2,50,255,cv2.THRESH_TOZERO)
+	hist, img1 = cv2.threshold(image1,20,255,cv2.THRESH_TOZERO)
+	hist, img2 = cv2.threshold(image2,20,255,cv2.THRESH_TOZERO)
 	res = cv2.matchTemplate(img1, img2, cv2.TM_CCORR_NORMED)
 	return res[0,0];
 
